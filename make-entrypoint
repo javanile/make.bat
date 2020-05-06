@@ -5,6 +5,4 @@ if [ $1 != "make" ]; then
     set -- make "$@"
 fi
 
-echo "==> MAKE.BAT $@"
-
 exec "$@"

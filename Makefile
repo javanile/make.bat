@@ -4,6 +4,9 @@ build:
 	chmod +x make-entrypoint
 	docker build --tag javanile/make.bat .
 
+docker-compose:
+	docker-compose help
+
 test1: build
 	docker run --rm \
 		-v ${PWD}:/make \
@@ -16,4 +19,4 @@ test2: build
 		-v ${PWD}:/make \
 		-v /var/run/docker.sock:/var/run/docker.sock \
 		-v /usr/bin/docker:/usr/bin/docker \
-		javanile/make.bat
+		javanile/make.bat docker-compose
