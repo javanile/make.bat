@@ -4,6 +4,12 @@ build:
 	chmod +x make-entrypoint
 	docker build --tag javanile/make.bat .
 
+release: build
+	docker push javanile/make.bat
+	git add .
+	git commit -am "release"
+	git push
+
 docker-compose:
 	docker-compose help
 
