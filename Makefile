@@ -10,6 +10,9 @@ release: build
 	git commit -am "release"
 	git push
 
+dockerfilelint:
+	docker run --rm -v ${PWD}/Dockerfile:/Dockerfile replicated/dockerfilelint /Dockerfile
+
 requirements:
 	pip3 install --upgrade pip setuptools wheel
 	pip3 install tqdm
