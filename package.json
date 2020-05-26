@@ -1,0 +1,22 @@
+{
+  "name": "make.bat",
+  "version": "0.0.1",
+  "description": "Makefile on Windows",
+  "main": "index.js",
+  "bin": {
+      "make": "make"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javanile/make.bat.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/javanile/make.bat/issues"
+  },
+  "homepage": "https://github.com/javanile/make.bat#readme"
+}
