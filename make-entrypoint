@@ -5,4 +5,10 @@ if [ $1 != "make" ]; then
     set -- make "$@"
 fi
 
+case $2 in
+    -v|--version)
+        echo ">>> make.bat"
+        ;;
+esac
+
 exec "$@"
