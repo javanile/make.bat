@@ -1,13 +1,14 @@
 {
   "name": "make.bat",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Makefile on Windows",
   "main": "index.js",
   "bin": {
-      "make": "make"
+      "make": "make.bat"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+      "postinstall": "node postinstall.js"
   },
   "repository": {
     "type": "git",
