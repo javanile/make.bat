@@ -1,0 +1,7 @@
+README.md
+make.bat
+setup.py
+make.bat.egg-info/PKG-INFO
+make.bat.egg-info/SOURCES.txt
+make.bat.egg-info/dependency_links.txt
+make.bat.egg-info/top_level.txt

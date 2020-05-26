@@ -12,8 +12,14 @@ case $2 in
     --docker-info)
         set -- docker info
         ;;
+    --docker-version)
+        set -- docker version
+        ;;
     --docker-workdir-ls)
         set -- ls -lah ${PWD}
+        ;;
+    --docker-compose-version)
+        set -- docker-compose version
         ;;
 esac
 

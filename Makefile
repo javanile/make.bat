@@ -10,21 +10,26 @@ release: build
 	git commit -am "release"
 	git push
 
-docker-compose:
-	docker-compose help
+requirements:
+	pip3 install --upgrade pip setuptools wheel
+	pip3 install tqdm
+	pip3 install --user --upgrade twine
+
+pip-release: requirements
+	rm -rf build/ dist/ *egg* **.pyc __pycache__
+	python3 setup.py bdist_wheel
+	python3 -m twine upload dist/*
 
 test1: build
 	docker run --rm \
 		-v ${PWD}:/make \
 		-v /var/run/docker.sock:/var/run/docker.sock \
-		-v /usr/bin/docker:/usr/bin/docker \
 		javanile/make.bat build
 
 test2: build
 	docker run --rm \
 		-v ${PWD}:/make \
 		-v /var/run/docker.sock:/var/run/docker.sock \
-		-v /usr/bin/docker:/usr/bin/docker \
 		javanile/make.bat docker-compose
 
 test-version: build
@@ -39,9 +44,20 @@ test-docker-info: build
 		-v /var/run/docker.sock:/var/run/docker.sock \
 		javanile/make.bat --docker-info
 
+test-docker-version: build
+	docker run --rm \
+		-v ${PWD}:/make \
+		-v /var/run/docker.sock:/var/run/docker.sock \
+		javanile/make.bat --docker-version
+
 test-docker-workdir-ls: build
 	docker run --rm \
 		-v ${PWD}:/make \
 		-v /var/run/docker.sock:/var/run/docker.sock \
 		javanile/make.bat --docker-workdir-ls
 
+test-docker-compose-version: build
+	docker run --rm \
+		-v ${PWD}:/make \
+		-v /var/run/docker.sock:/var/run/docker.sock \
+		javanile/make.bat --docker-compose-version
