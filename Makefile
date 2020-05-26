@@ -33,4 +33,15 @@ test-version: build
 		-v /var/run/docker.sock:/var/run/docker.sock \
 		javanile/make.bat --version
 
+test-docker-info: build
+	docker run --rm \
+		-v ${PWD}:/make \
+		-v /var/run/docker.sock:/var/run/docker.sock \
+		javanile/make.bat --docker-info
+
+test-docker-workdir-ls: build
+	docker run --rm \
+		-v ${PWD}:/make \
+		-v /var/run/docker.sock:/var/run/docker.sock \
+		javanile/make.bat --docker-workdir-ls
 
