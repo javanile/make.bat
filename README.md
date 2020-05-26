@@ -1,4 +1,4 @@
-# javanile/make.bat
+# make.bat
 
 ## Requirements
 
