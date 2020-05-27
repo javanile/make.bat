@@ -31,7 +31,11 @@ C:\Users\SamSepiol\MrProject> make
 
 #### Installation
 
-### Custom
+```cmd
+C:\Users\SamSepiol> npm install -g make.bat
+```
+
+### Manual setup
 
 ```
 %USERPROFILE%\AppData\Local\Microsoft\WindowsApps
