@@ -13,12 +13,22 @@ release: build
 dockerfilelint:
 	docker run --rm -v ${PWD}/Dockerfile:/Dockerfile replicated/dockerfilelint /Dockerfile
 
-requirements:
+python-requirements:
+	pip install --upgrade pip setuptools wheel
+	pip install tqdm
+	pip install --user --upgrade twine
+
+python3-requirements:
 	pip3 install --upgrade pip setuptools wheel
 	pip3 install tqdm
 	pip3 install --user --upgrade twine
 
-pip-release: requirements
+pip-release: python-requirements
+	rm -rf build/ dist/ *egg* **.pyc __pycache__
+	python setup.py bdist_wheel
+	python -m twine upload dist/*
+
+pip3-release: python3-requirements
 	rm -rf build/ dist/ *egg* **.pyc __pycache__
 	python3 setup.py bdist_wheel
 	python3 -m twine upload dist/*
