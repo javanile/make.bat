@@ -13,24 +13,14 @@ release: build
 dockerfilelint:
 	docker run --rm -v ${PWD}/Dockerfile:/Dockerfile replicated/dockerfilelint /Dockerfile
 
-python-requirements:
-	pip install --upgrade pip setuptools wheel
-	pip install tqdm
-	pip install --user --upgrade twine
-
-python3-requirements:
+requirements:
 	pip3 install --upgrade pip setuptools wheel
 	pip3 install tqdm
 	pip3 install --user --upgrade twine
 
-pip-release: python-requirements
+release: requirements
 	rm -rf build/ dist/ *egg* **.pyc __pycache__
-	python setup.py bdist_wheel
-	python -m twine upload dist/*
-
-pip3-release: python3-requirements
-	rm -rf build/ dist/ *egg* **.pyc __pycache__
-	python3 setup.py bdist_wheel
+	python3 setup.py bdist_wheel --universal
 	python3 -m twine upload dist/*
 
 test1: build
@@ -74,3 +64,9 @@ test-docker-compose-version: build
 		-v ${PWD}:/make \
 		-v /var/run/docker.sock:/var/run/docker.sock \
 		javanile/make.bat --docker-compose-version
+
+test-pip-install-py2:
+	docker run --rm python:2 pip install make.bat
+
+test-pip-install-py3:
+	docker run --rm python:3 pip install make.bat

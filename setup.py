@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='make.bat',
-    version='0.0.3',
+    version='0.1.0',
     scripts=['make.bat'],
     author="Francesco Bianco",
     author_email="bianco@javanile.org",
@@ -14,6 +14,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/javanile/make.bat",
     packages=setuptools.find_packages(),
+    python_requires='>=2.7, <4',
     classifiers=[
         "Operating System :: OS Independent",
         "License :: OSI Approved :: MIT License",
