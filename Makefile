@@ -1,10 +1,10 @@
-.PHONY: test
 
+.PHONY: build
 build:
 	chmod +x make-entrypoint
 	docker build --tag javanile/make.bat .
 
-release: build
+docker-release: build
 	docker push javanile/make.bat
 	git add .
 	git commit -am "release"
@@ -22,6 +22,13 @@ release: requirements
 	rm -rf build/ dist/ *egg* **.pyc __pycache__
 	python3 setup.py bdist_wheel --universal
 	python3 -m twine upload dist/*
+
+.PHONY: test
+test: build
+	docker run --rm \
+		-v ${PWD}:/make \
+		-v /var/run/docker.sock:/var/run/docker.sock \
+		javanile/make.bat build
 
 test1: build
 	docker run --rm \
@@ -59,6 +66,12 @@ test-docker-workdir-ls: build
 		-v /var/run/docker.sock:/var/run/docker.sock \
 		javanile/make.bat --docker-workdir-ls
 
+test-docker-workdir-envsubst: build
+	docker run --rm \
+		-v ${PWD}:/make \
+		-v /var/run/docker.sock:/var/run/docker.sock \
+		javanile/make.bat test-local-envsubst
+
 test-docker-compose-version: build
 	docker run --rm \
 		-v ${PWD}:/make \
@@ -70,3 +83,6 @@ test-pip-install-py2:
 
 test-pip-install-py3:
 	docker run --rm python:3 pip install make.bat
+
+test-local-envsubst:
+	echo "ciao" | envsubst
