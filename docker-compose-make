@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  make:
+    image: javanile/make.bat
+    volumes:
+      - .:/make

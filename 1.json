@@ -1,0 +1,224 @@
+[
+    {
+        "Id": "576f3f1c6aced31c9c2ea24e7859ded4d2470d2a5e9ed68a8035069229e57290",
+        "Created": "2020-08-31T19:45:22.19256475Z",
+        "Path": "sleep",
+        "Args": [
+            "100"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 4578,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2020-08-31T19:45:25.177485289Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:4e2eef94cd6b93dd4d794c18b45c763f72edc22858e0da5b6e63a4566a54c03c",
+        "ResolvConfPath": "/var/lib/docker/containers/576f3f1c6aced31c9c2ea24e7859ded4d2470d2a5e9ed68a8035069229e57290/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/576f3f1c6aced31c9c2ea24e7859ded4d2470d2a5e9ed68a8035069229e57290/hostname",
+        "HostsPath": "/var/lib/docker/containers/576f3f1c6aced31c9c2ea24e7859ded4d2470d2a5e9ed68a8035069229e57290/hosts",
+        "LogPath": "/var/lib/docker/containers/576f3f1c6aced31c9c2ea24e7859ded4d2470d2a5e9ed68a8035069229e57290/576f3f1c6aced31c9c2ea24e7859ded4d2470d2a5e9ed68a8035069229e57290-json.log",
+        "Name": "/makebat_ubuntu_1",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/host_mnt/c/Users/cicci/Develop/Javanile/make.bat:/test/volume:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "makebat_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": [],
+            "CapAdd": null,
+            "CapDrop": null,
+            "Capabilities": null,
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "shareable",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "KernelMemory": 0,
+            "KernelMemoryTCP": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/f8e2abe6e4b9ba34fd1930b2d15c1b0ff9c6e36a7431b0fa23088b37de167a35-init/diff:/var/lib/docker/overlay2/fd070ca38309580f284bc3f56ccb9279bd920eab29f15c21fedeab0ab03c50be/diff:/var/lib/docker/overlay2/b595654db9d422b152df5a93a8515fe1632acb30ef14523d5a7938e7e4cac91a/diff:/var/lib/docker/overlay2/70aba0f4bf63c660cc588c0b2f72cc2641dea638eec718a3a2a02916b32c8d09/diff:/var/lib/docker/overlay2/56f9e681adc008ac8774fbc2a5402a3e47bd842b53a1925522e32727ef32570d/diff",
+                "MergedDir": "/var/lib/docker/overlay2/f8e2abe6e4b9ba34fd1930b2d15c1b0ff9c6e36a7431b0fa23088b37de167a35/merged",
+                "UpperDir": "/var/lib/docker/overlay2/f8e2abe6e4b9ba34fd1930b2d15c1b0ff9c6e36a7431b0fa23088b37de167a35/diff",
+                "WorkDir": "/var/lib/docker/overlay2/f8e2abe6e4b9ba34fd1930b2d15c1b0ff9c6e36a7431b0fa23088b37de167a35/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/host_mnt/c/Users/cicci/Develop/Javanile/make.bat",
+                "Destination": "/test/volume",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "576f3f1c6ace",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "sleep",
+                "100"
+            ],
+            "Image": "ubuntu",
+            "Volumes": {
+                "/test/volume": {}
+            },
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "eae2124d725007d723462ce942f5e42c344a0c2fff955ec928a1e50f74d9b747",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "makebat",
+                "com.docker.compose.project.config_files": "docker-compose.yml",
+                "com.docker.compose.project.working_dir": "C:\\Users\\cicci\\Develop\\Javanile\\make.bat",
+                "com.docker.compose.service": "ubuntu",
+                "com.docker.compose.version": "1.26.2"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "0b393329df7e44e391c50312ef94225fee944fcf38d083affb79be04d0d0c94e",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {},
+            "SandboxKey": "/var/run/docker/netns/0b393329df7e",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "makebat_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "ubuntu",
+                        "576f3f1c6ace"
+                    ],
+                    "NetworkID": "97c6391b1eafd3f16780d324fa93ef1518fa99bd98e75c6c4dc75bbecdd0c145",
+                    "EndpointID": "be1e35e28ea7b07ec55078b4364e1edd81cb9663dbc44ef63d863adad6a056d1",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:12:00:02",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
