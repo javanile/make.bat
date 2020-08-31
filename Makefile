@@ -10,7 +10,8 @@ docker-release: build
 	git commit -am "release"
 	git push
 
-dockerfilelint:
+lint:
+	docker run --rm -i hadolint/hadolint < Dockerfile
 	docker run --rm -v ${PWD}/Dockerfile:/Dockerfile replicated/dockerfilelint /Dockerfile
 
 requirements:
