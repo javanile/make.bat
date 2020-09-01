@@ -1,14 +1,17 @@
+#!make
 
 .PHONY: build
 build:
 	chmod +x make-entrypoint
 	docker build --tag javanile/make.bat .
 
-docker-release: build
-	docker push javanile/make.bat
+git-push:
 	git add .
 	git commit -am "release"
 	git push
+
+docker-release: build git-push
+	docker push javanile/make.bat
 
 lint:
 	docker run --rm -i hadolint/hadolint < Dockerfile
@@ -78,6 +81,12 @@ test-docker-compose-version: build
 		-v ${PWD}:/make \
 		-v /var/run/docker.sock:/var/run/docker.sock \
 		javanile/make.bat --docker-compose-version
+
+test-docker-bash: build
+	docker run --rm \
+		-v ${PWD}:/make \
+		-v /var/run/docker.sock:/var/run/docker.sock \
+		javanile/make.bat test-local-bash
 
 test-pip-install-py2:
 	docker run --rm python:2 pip install make.bat
