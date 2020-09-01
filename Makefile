@@ -96,9 +96,7 @@ test-pip-install-py3:
 
 test-local-envsubst:
 	echo "ciao" | envsubst
-	
-test-docker-compose-up: build
+
+test-docker-compose-up:
 	docker-compose down -v --remove-orphans
 	docker-compose up -d
-	
-test-

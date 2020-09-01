@@ -17,7 +17,6 @@ RUN apk add --no-cache \
     pip install docker-compose
 
 COPY make-entrypoint /usr/local/bin/
-COPY docker-compose-make /opt/docker-compose-make
 
 WORKDIR /make
 
