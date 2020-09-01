@@ -1,12 +1,7 @@
 #!/bin/sh
 set -e
 
-CONTAINER_ID=$(cat /proc/self/cgroup | grep -o -e "docker-.*.scope" | head -n 1 | sed "s/docker-\(.*\).scope/\\1/")
-
-echo "CONTAINER_ID: ${CONTAINER_ID}"		
-echo "HOST_PWD: ${HOST_PWD}"
-
-ls /make 
+export MAKEBAT_CONTAINER_ID=$(basename $(cat /proc/1/cpuset))
 
 if [[ $1 != "make" ]]; then
     set -- make "$@"
@@ -14,7 +9,7 @@ fi
 
 case $2 in
     -v|--version)
-        echo "--> javanile/make.bat <--"
+        echo "Make.bat by Francesco Bianco <bianco@javanile.org>"
         ;;
     --docker-info)
         set -- docker info
@@ -22,19 +17,12 @@ case $2 in
     --docker-version)
         set -- docker version
         ;;
-    --docker-workdir-ls)
-        set -- ls -lah ${PWD}
-        ;;
     --docker-compose-version)
         set -- docker-compose version
         ;;
-    --docker-compose-make)
-        set -- cp /opt/.docker-compose-make
+    --docker-workdir-info)
+        set -- stat ${PWD}
         ;;
-    --docker-host-pwd)		
-		docker container inspect ${CONTAINER_ID}
-		set -- true        
-		;;
 esac
 
 exec "$@"

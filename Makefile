@@ -10,7 +10,7 @@ git-push:
 	git commit -am "release"
 	git push
 
-docker-release: build git-push
+docker-push: build git-push
 	docker push javanile/make.bat
 
 lint:
