@@ -6,8 +6,8 @@
     -v //usr/bin/docker:/usr/bin/docker ^
     javanile/pwd
 
-set /p PWD=<pwd.var
-del pwd.yml pwd.var 
+@set /p PWD=<pwd.var
+@del pwd.var 
 
 docker run -it --rm ^
     -w "%PWD%" ^
