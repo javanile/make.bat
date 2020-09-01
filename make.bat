@@ -6,14 +6,11 @@ docker run --rm ^
     -v //usr/bin/docker:/usr/bin/docker ^
     javanile/pwd
 
-type pwd.var
-
-docker-compose -f pwd.yml run --rm pwd
-
-type pwd.var
+set /p PWD=<pwd.var
 
 docker run -it --rm ^
-    -v %CD%:/make ^
+    -w "%PWD%" ^
+    -v "%CD%:%PWD%" ^
     -v //var/run/docker.sock:/var/run/docker.sock ^
     -v //usr/bin/docker:/usr/bin/docker ^
     javanile/make.bat %*
