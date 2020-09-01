@@ -1,6 +1,6 @@
 @echo off
 
-docker run --rm ^
+@docker run --rm ^
     -v "%CD%:/pwd" ^
     -v //var/run/docker.sock:/var/run/docker.sock ^
     -v //usr/bin/docker:/usr/bin/docker ^
