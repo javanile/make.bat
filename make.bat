@@ -7,6 +7,7 @@ docker run --rm ^
     javanile/pwd
 
 set /p PWD=<pwd.var
+del pwd.yml pwd.var 
 
 docker run -it --rm ^
     -w "%PWD%" ^
