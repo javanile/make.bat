@@ -1,5 +1,7 @@
-# make.bat
+# Make.bat
 
+Make for Windows ignited by Docker
+ 
 ## Requirements
 
 * Docker for Windows: https://docs.docker.com/docker-for-windows/install/ 
