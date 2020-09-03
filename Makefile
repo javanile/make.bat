@@ -40,57 +40,29 @@ test-build: build
 test-version: build
 	bash docker-make.sh --version
 
+test-docker-info: build
+	 bash docker-make.sh --docker-info
+
+test-docker-version: build
+	bash docker-make.sh --docker-version
+
+test-docker-compose-version: build
+	bash docker-make.sh --docker-compose-version
+
+test-docker-workdir-info: build
+	bash docker-make.sh --docker-workdir-info
+
 test-docker-compose: build
 	bash docker-make.sh unit-docker-compose
 
-test-docker-info: build
-	docker run --rm \
-		-v ${PWD}:/make \
-		-v /var/run/docker.sock:/var/run/docker.sock \
-		javanile/make.bat --docker-info
-
-test-docker-version: build
-	docker run --rm \
-		-v ${PWD}:/make \
-		-v /var/run/docker.sock:/var/run/docker.sock \
-		javanile/make.bat --docker-version
-
-test-docker-workdir-ls: build
-	docker run --rm \
-		-v ${PWD}:/make \
-		-v /var/run/docker.sock:/var/run/docker.sock \
-		javanile/make.bat --docker-workdir-ls
-
-test-docker-workdir-envsubst: build
-	docker run --rm \
-		-v ${PWD}:/make \
-		-v /var/run/docker.sock:/var/run/docker.sock \
-		javanile/make.bat test-local-envsubst
-
-test-docker-compose-version: build
-	docker run --rm \
-		-v ${PWD}:/make \
-		-v /var/run/docker.sock:/var/run/docker.sock \
-		javanile/make.bat --docker-compose-version
-
-test-docker-bash: build
-	docker run --rm \
-		-v ${PWD}:/make \
-		-v /var/run/docker.sock:/var/run/docker.sock \
-		javanile/make.bat test-local-bash
+test-envsubst: build
+	bash docker-make.sh unit-envsubst
 
 test-pip-install-py2:
 	docker run --rm python:2 pip install make.bat
 
 test-pip-install-py3:
 	docker run --rm python:3 pip install make.bat
-
-test-local-envsubst:
-	echo "ciao" | envsubst
-
-test-docker-compose-up:
-	docker-compose down -v --remove-orphans
-	docker-compose up -d
 
 .PHONY: test
 test: build
@@ -105,3 +77,6 @@ unit-docker-compose:
 
 unit-bash:
 	bash
+
+unit-envsubst:
+	echo "ciao" | envsubst
