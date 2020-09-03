@@ -7,7 +7,7 @@ build:
 
 git-push:
 	git add .
-	git commit -am "release"
+	git commit -am "new release" || true
 	git push
 
 docker-push: build git-push
