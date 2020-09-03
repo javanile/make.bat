@@ -1,5 +1,7 @@
 # Make.bat
 
+![Lint Code Base](https://github.com/javanile/make.bat/workflows/Lint%20Code%20Base/badge.svg)
+
 Make for Windows ignited by Docker
  
 ## Requirements
