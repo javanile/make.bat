@@ -77,7 +77,7 @@ unit-docker-compose:
 	docker-compose down
 
 unit-bash:
-	bash
+	@bash
 
 unit-envsubst:
-	echo 'MAKEBAT_CONTAINER_ID: ${MAKEBAT_CONTAINER_ID}' | envsubst
+	@echo 'MAKEBAT_CONTAINER_ID: ${MAKEBAT_CONTAINER_ID}' | envsubst

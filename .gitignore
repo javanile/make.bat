@@ -3,5 +3,6 @@
 build/
 dist/
 make.bat.egg-info/
+.pwd.var
 pwd.var
 pwd.yml

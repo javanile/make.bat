@@ -8,7 +8,7 @@ docker run --rm ^
 
 set /p PWD=<.pwd.var
 
-docker run -it --rm ^
+docker run -ti --rm ^
     -w "%PWD%" ^
     -v "%CD%:%PWD%" ^
     -v //var/run/docker.sock:/var/run/docker.sock ^
