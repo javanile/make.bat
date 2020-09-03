@@ -1,5 +1,7 @@
 FROM docker:19.03.8
 
+ENV PYTHONWARNINGS="ignore::DeprecationWarning"
+
 RUN apk add --no-cache \
     git \
     make \
