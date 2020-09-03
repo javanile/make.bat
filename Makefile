@@ -28,9 +28,9 @@ release: requirements
 	python3 -m twine upload dist/*
 
 
-## -------
-## Testing
-## -------
+## -----
+## Tests
+## -----
 test-bash: build
 	bash docker-make.sh unit-bash
 
@@ -67,6 +67,7 @@ test-pip-install-py3:
 .PHONY: test
 test: build
 
+
 ## -----
 ## Units
 ## -----
@@ -79,4 +80,4 @@ unit-bash:
 	bash
 
 unit-envsubst:
-	echo "ciao" | envsubst
+	echo 'MAKEBAT_CONTAINER_ID: ${MAKEBAT_CONTAINER_ID}' | envsubst
