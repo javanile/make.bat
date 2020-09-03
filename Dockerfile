@@ -18,7 +18,8 @@ RUN apk add --no-cache \
     diffutils && \
     pip install docker-compose
 
-COPY make-entrypoint /usr/local/bin/
+COPY docker-compose /usr/bin/docker-compose
+COPY make-entrypoint /usr/local/bin/make-entrypoint
 
 WORKDIR /make
 

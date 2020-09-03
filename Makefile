@@ -2,7 +2,7 @@
 
 .PHONY: build
 build:
-	chmod +x make-entrypoint
+	chmod +x make-entrypoint docker-compose
 	docker build --tag javanile/make.bat .
 
 git-push:
@@ -27,30 +27,21 @@ release: requirements
 	python3 setup.py bdist_wheel --universal
 	python3 -m twine upload dist/*
 
-.PHONY: test
-test: build
-	docker run --rm \
-		-v ${PWD}:/make \
-		-v /var/run/docker.sock:/var/run/docker.sock \
-		javanile/make.bat build
 
-test1: build
-	docker run --rm \
-		-v ${PWD}:/make \
-		-v /var/run/docker.sock:/var/run/docker.sock \
-		javanile/make.bat build
+## -------
+## Testing
+## -------
+test-bash: build
+	bash docker-make.sh unit-bash
 
-test2: build
-	docker run --rm \
-		-v ${PWD}:/make \
-		-v /var/run/docker.sock:/var/run/docker.sock \
-		javanile/make.bat docker-compose
+test-build: build
+	bash docker-make.sh build
 
 test-version: build
-	docker run --rm \
-		-v ${PWD}:/make \
-		-v /var/run/docker.sock:/var/run/docker.sock \
-		javanile/make.bat --version
+	bash docker-make.sh --version
+
+test-docker-compose: build
+	bash docker-make.sh unit-docker-compose
 
 test-docker-info: build
 	docker run --rm \
@@ -100,3 +91,17 @@ test-local-envsubst:
 test-docker-compose-up:
 	docker-compose down -v --remove-orphans
 	docker-compose up -d
+
+.PHONY: test
+test: build
+
+## -----
+## Units
+## -----
+unit-docker-compose:
+	docker-compose up -d
+	docker-compose ps
+	docker-compose down
+
+unit-bash:
+	bash
