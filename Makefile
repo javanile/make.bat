@@ -6,12 +6,10 @@ build:
 	docker build --tag javanile/make.bat .
 
 git-push:
-push:
 	git config credential.helper 'cache --timeout=3600'
 	git pull
 	git add .
 	git commit -am "new release" || true
-	git commit -am "push"
 	git push
 
 docker-push: build git-push
