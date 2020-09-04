@@ -31,15 +31,17 @@ release: requirements
 	python3 setup.py bdist_wheel --universal
 	python3 -m twine upload dist/*
 
+fork:
+	curl -sL git.io/fork.sh | bash -
 
 ## -----
 ## Tests
 ## -----
+test-build:
+	bash docker-make.sh build
+
 test-bash: build
 	bash docker-make.sh unit-bash
-
-test-build: build
-	bash docker-make.sh build
 
 test-version: build
 	bash docker-make.sh --version
@@ -85,5 +87,3 @@ unit-bash:
 
 unit-envsubst:
 	@echo 'MAKEBAT_CONTAINER_ID: ${MAKEBAT_CONTAINER_ID}' | envsubst
-fork:
-	curl -sL git.io/fork.sh | bash -
