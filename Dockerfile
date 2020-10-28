@@ -15,8 +15,11 @@ RUN apk add --no-cache \
     gettext \
     curl \
     wget \
-    diffutils && \
-    pip install docker-compose
+    zip \
+    diffutils
+RUN pip install "pytest<5"
+RUN pip install awsebcli "pyrsistent==0.16.0"
+RUN pip install "docker-compose"
 
 COPY docker-compose /usr/bin/docker-compose
 COPY make-entrypoint /usr/local/bin/make-entrypoint
