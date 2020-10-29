@@ -29,6 +29,8 @@ WORKDIR /make
 RUN git config --global credential.helper cache && \
     git config --global credential.helper 'store --file /make/.git/credentials'
 
+RUN apk add --no-cache coreutils
+
 ENTRYPOINT ["make-entrypoint"]
 
 CMD ["make"]

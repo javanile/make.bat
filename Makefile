@@ -62,6 +62,9 @@ test-docker-compose: build
 test-envsubst: build
 	bash docker-make.sh unit-envsubst
 
+test-numfmt: build
+	bash docker-make.sh unit-numfmt
+
 test-pip-install-py2:
 	docker run --rm python:2 pip install make.bat
 
@@ -85,3 +88,6 @@ unit-bash:
 
 unit-envsubst:
 	@echo 'MAKEBAT_CONTAINER_ID: ${MAKEBAT_CONTAINER_ID}' | envsubst
+
+unit-numfmt:
+	@stat -c %s Makefile | numfmt --to=iec
