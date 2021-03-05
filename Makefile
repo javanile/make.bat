@@ -45,7 +45,7 @@ test-version: build
 	bash docker-make.sh --version
 
 test-docker-info: build
-	 bash docker-make.sh --docker-info
+	bash docker-make.sh --docker-info
 
 test-docker-version: build
 	bash docker-make.sh --docker-version
@@ -85,9 +85,9 @@ test: build
 ## Units
 ## -----
 unit-docker-compose:
-	docker-compose up -d
-	docker-compose ps
-	docker-compose down
+	@docker-compose up -d
+	@docker-compose ps
+	@docker-compose down
 
 unit-bash:
 	@bash
@@ -102,5 +102,5 @@ unit-file:
 	@file Makefile
 
 unit-clone-private-repository:
-	@git clone https://gitlab.com/javanile/fixtures/private-repository
-
+	@git clone https://gitlab.com/javanile/fixtures/private-repository.git private-repository
+	@rm -fr private-repository
