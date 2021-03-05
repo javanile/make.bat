@@ -16,7 +16,9 @@ RUN apk add --no-cache \
     curl \
     wget \
     zip \
+    file \
     diffutils
+
 RUN pip install "pytest<5"
 RUN pip install awsebcli "pyrsistent==0.16.0"
 RUN pip install "docker-compose"

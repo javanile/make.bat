@@ -65,6 +65,12 @@ test-envsubst: build
 test-numfmt: build
 	bash docker-make.sh unit-numfmt
 
+test-file: build
+	bash docker-make.sh unit-file
+
+test-clone-private-repository: build
+	bash docker-make.sh unit-clone-private-repository
+
 test-pip-install-py2:
 	docker run --rm python:2 pip install make.bat
 
@@ -91,3 +97,10 @@ unit-envsubst:
 
 unit-numfmt:
 	@stat -c %s Makefile | numfmt --to=iec
+
+unit-file:
+	@file Makefile
+
+unit-clone-private-repository:
+	@git clone https://gitlab.com/javanile/fixtures/private-repository
+
