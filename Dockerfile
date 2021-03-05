@@ -33,6 +33,8 @@ RUN git config --global credential.helper cache && \
 
 RUN apk add --no-cache coreutils
 
+ENV OS=Windows_NT
+
 ENTRYPOINT ["make-entrypoint"]
 
 CMD ["make"]

@@ -72,6 +72,9 @@ test-file: build
 test-clone-private-repository: build
 	bash docker-make.sh unit-clone-private-repository
 
+test-os: build
+	bash docker-make.sh unit-os
+
 test-pip-install-py2:
 	docker run --rm python:2 pip install make.bat
 
@@ -100,6 +103,9 @@ unit-numfmt:
 
 unit-file:
 	@file Makefile
+
+unit-os:
+	@echo "$(OS)"
 
 unit-clone-private-repository:
 	@git clone https://gitlab.com/javanile/fixtures/private-repository.git private-repository
