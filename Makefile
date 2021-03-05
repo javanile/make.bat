@@ -2,39 +2,40 @@
 
 .PHONY: build
 build:
-	chmod +x make-entrypoint docker-compose
-	docker build --tag javanile/make.bat .
+	@chmod +x make-entrypoint docker-compose
+	@docker build --tag javanile/make.bat .
 
 git-push:
-	git config credential.helper 'cache --timeout=3600'
-	git pull
-	git add .
-	git commit -am "new release" || true
-	git push
+	@git config credential.helper 'cache --timeout=3600'
+	@git pull
+	@git add .
+	@git commit -am "new release" || true
+	@git push
 
 docker-push: build git-push
-	docker push javanile/make.bat
+	@docker login
+	@docker push javanile/make.bat
 
 lint:
-	docker run --rm -i hadolint/hadolint < Dockerfile
-	docker run --rm -v ${PWD}/Dockerfile:/Dockerfile replicated/dockerfilelint /Dockerfile
+	@docker run --rm -i hadolint/hadolint < Dockerfile
+	@docker run --rm -v ${PWD}/Dockerfile:/Dockerfile replicated/dockerfilelint /Dockerfile
 
 requirements:
-	pip3 install --upgrade pip setuptools wheel
-	pip3 install tqdm
-	pip3 install --user --upgrade twine
+	@pip3 install --upgrade pip setuptools wheel
+	@pip3 install tqdm
+	@pip3 install --user --upgrade twine
 
 release: requirements
-	rm -rf build/ dist/ *egg* **.pyc __pycache__
-	python3 setup.py bdist_wheel --universal
-	python3 -m twine upload dist/*
+	@rm -rf build/ dist/ *egg* **.pyc __pycache__
+	@python3 setup.py bdist_wheel --universal
+	@python3 -m twine upload dist/*
 
 fork:
 	curl -sL git.io/fork.sh | bash -
 
-## -----
+## =====
 ## Tests
-## -----
+## =====
 test-build:
 	bash docker-make.sh build
 
@@ -80,10 +81,9 @@ test-pip-install-py3:
 .PHONY: test
 test: build
 
-
-## -----
+## =====
 ## Units
-## -----
+## =====
 unit-docker-compose:
 	@docker-compose up -d
 	@docker-compose ps
