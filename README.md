@@ -3,7 +3,15 @@
 ![Lint Code Base](https://github.com/javanile/make.bat/workflows/Lint%20Code%20Base/badge.svg)
 
 Make for Windows ignited by Docker
- 
+
+### Features
+
+* Secure by default. No file, network, or environment access, unless explicitly enabled.
+* Supports TypeScript out of the box.
+* Ships only a single executable file.
+* Built-in utilities like a dependency inspector (deno info) and a code formatter (deno fmt).
+* Set of reviewed standard modules that are guaranteed to work with Deno.
+
 ### Requirements
 
 * Docker for Windows: https://docs.docker.com/docker-for-windows/install/ 
