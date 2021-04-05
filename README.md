@@ -36,10 +36,11 @@ curl -fsSL https://deno.land/x/install/install.sh | sh
 choco install deno
 ```
 
-[Scoop](https://scoop.sh/) (Windows):
+For [Scoop](https://scoop.sh/) user:
 
 ```powershell
-scoop install deno
+scoop bucket add javanile https://github.com/javanile/scoop-bucket.git
+scoop install make.bat
 ```
 
 For Python developer
@@ -57,7 +58,7 @@ C:\Users\SamSepiol> npm install -g make.bat
 For PHP developer 
 
 ```cmd
-C:\Users\SamSepiol> npm install -g make.bat
+C:\Users\SamSepiol> composer global require javanile/make.bat
 ```
 
 ### Usage
@@ -68,20 +69,9 @@ As a standard GNU Make simply you
 C:\Users\SamSepiol\MrProject> make 
 ```
 
-## Documentation
-
-## Alternative installation
-
-### NodeJS
-
-#### Requirements
-
-* Docker for Windows: https://docs.docker.com/docker-for-windows/install/ 
-* NodeJS for Windows: https://nodejs.org/en/download/
-
-
-
 ### Manual setup
+
+Copy this file [make.bat](https://raw.githubusercontent.com/javanile/make.bat/master/make.bat) into the following directory
 
 ```
 %USERPROFILE%\AppData\Local\Microsoft\WindowsApps
