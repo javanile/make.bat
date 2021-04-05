@@ -77,6 +77,15 @@ Copy this file [make.bat](https://raw.githubusercontent.com/javanile/make.bat/ma
 %USERPROFILE%\AppData\Local\Microsoft\WindowsApps
 ```
 
+### Short URLs
+
+```bash
+curl -i "https://git.io" \
+     -d "url=https://raw.githubusercontent.com/javanile/make.bat/master/script/install.ps1" \
+     -d "code=make.ps1"
+```
+
+
 ## Development
 
 ```bash
