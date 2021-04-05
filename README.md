@@ -21,7 +21,7 @@ Make for Windows ignited by Docker
 For [PowerShell]() user
 
 ```shell
-PS C:\Users\SamSepiol> curl git.io/make.ps1 -o setup; .\setup
+PS C:\Users\SamSepiol> curl git.io/make.ps1 -o setup.ps1; .\setup.ps1
 ```
 
 For [cmd.exe]() user
