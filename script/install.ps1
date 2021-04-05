@@ -24,7 +24,7 @@ If (Test-CommandNotExists scoop) {
 	Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')	
 }
 
-If (Test-CommandNotExists vtiger) {
+If (Test-CommandNotExists make) {
 	Write-Host "Install Make ignoted by Docker..."
 	scoop bucket add javanile https://github.com/javanile/scoop-bucket.git
 	scoop update
