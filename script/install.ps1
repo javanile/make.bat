@@ -25,7 +25,7 @@ If (Test-CommandNotExists scoop) {
 }
 
 If (Test-CommandNotExists make) {
-	Write-Host "Install Make ignoted by Docker..."
+	Write-Host "Install make.bat..."
 	scoop bucket add javanile https://github.com/javanile/scoop-bucket.git
 	scoop update
 	scoop install make.bat
