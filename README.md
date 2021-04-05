@@ -20,7 +20,7 @@ Make for Windows ignited by Docker
 
 For [PowerShell]() user
 
-```powershell
+```shell
 PS C:\Users\SamSepiol> curl git.io/make.bat -o setup; .\setup
 ```
 
