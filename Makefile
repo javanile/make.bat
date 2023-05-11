@@ -4,6 +4,7 @@
 build:
 	@chmod +x make-entrypoint docker-compose
 	@docker build --tag javanile/make.bat .
+	@docker build --tag javanile/make.bat:20 .
 
 git-push:
 	@git config credential.helper 'cache --timeout=3600'
@@ -15,8 +16,6 @@ git-push:
 docker-push: build git-push
 	@docker login
 	@docker push javanile/make.bat
-	@docker push javanile/make.bat
-	@docker push javanile/make.bat:20
 	@docker push javanile/make.bat:20
 
 lint:
