@@ -13,4 +13,4 @@ docker run -ti --rm ^
     -v "%CD%:%PWD%" ^
     -v //var/run/docker.sock:/var/run/docker.sock ^
     -v //usr/bin/docker:/usr/bin/docker ^
-    javanile/make.bat %*
+    javanile/make.bat:20 %*
