@@ -15,6 +15,8 @@ git-push:
 docker-push: build git-push
 	@docker login
 	@docker push javanile/make.bat
+	@docker push javanile/make.bat
+	@docker push javanile/make.bat:20
 	@docker push javanile/make.bat:20
 
 lint:
