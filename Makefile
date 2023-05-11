@@ -15,6 +15,7 @@ git-push:
 docker-push: build git-push
 	@docker login
 	@docker push javanile/make.bat
+	@docker push javanile/make.bat:20
 
 lint:
 	@docker run --rm -i hadolint/hadolint < Dockerfile
@@ -36,6 +37,7 @@ fork:
 ## =====
 ## Tests
 ## =====
+
 test-build:
 	bash docker-make.sh build
 
@@ -59,6 +61,9 @@ test-docker-workdir-info: build
 
 test-docker-compose: build
 	bash docker-make.sh unit-docker-compose
+
+test-docker-compose-plugin: build
+	bash docker-make.sh unit-docker-compose-plugin
 
 test-envsubst: build
 	bash docker-make.sh unit-envsubst
@@ -87,6 +92,12 @@ test: build
 ## =====
 ## Units
 ## =====
+
+unit-docker-compose-plugin:
+	@docker compose up -d
+	@docker compose ps
+	@docker compose down
+
 unit-docker-compose:
 	@docker-compose up -d
 	@docker-compose ps
