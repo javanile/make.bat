@@ -2,7 +2,7 @@
 
 .PHONY: build
 build:
-	@chmod +x make-entrypoint docker-compose
+	@chmod +x make-entrypoint
 	@docker build --tag javanile/make.bat .
 	@docker build --tag javanile/make.bat:20 .
 
