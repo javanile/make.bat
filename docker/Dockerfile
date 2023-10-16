@@ -22,7 +22,9 @@ RUN apk add --no-cache \
 #RUN pip install "docker-compose"
 
 #COPY docker-compose /usr/bin/docker-compose
-COPY make-entrypoint /usr/local/bin/make-entrypoint
+ADD make-entrypoint /usr/local/bin/make-entrypoint
+
+RUN chmod +x /usr/local/bin/make-entrypoint
 
 WORKDIR /make
 
@@ -34,8 +36,7 @@ RUN apk add --no-cache coreutils
 RUN apk add
 
 ENV OS="Windows_NT"
-ENV WINDOWS_VOLUME=""
 
-ENTRYPOINT ["make-entrypoint"]
+ENTRYPOINT ["/usr/local/bin/make-entrypoint"]
 
 CMD ["make"]
