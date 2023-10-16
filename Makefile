@@ -4,9 +4,9 @@ init:
 	@curl -so .editorconfig https://editorconfig.javanile.org/lib/windows
 
 build:
-	@chmod +x make-entrypoint
-	@docker build --tag javanile/make.bat .
-	@docker build --tag javanile/make.bat:20 .
+	@chmod +x docker/make-entrypoint
+	@cd docker && docker build --tag javanile/make.bat .
+	@cd docker && docker build --tag javanile/make.bat:20 .
 
 git-push:
 	@git config credential.helper 'cache --timeout=3600'
@@ -42,13 +42,13 @@ fork:
 ## =====
 
 test-build:
-	bash docker-make.sh build
+	@bash contrib/docker-make.sh build
 
 test-bash: build
-	bash docker-make.sh unit-bash
+	@bash contrib/docker-make.sh unit-bash
 
 test-version: build
-	bash docker-make.sh --version
+	@bash contrib/docker-make.sh --version
 
 test-docker-info: build
 	bash docker-make.sh --docker-info
