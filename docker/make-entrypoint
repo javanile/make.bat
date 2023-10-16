@@ -21,7 +21,7 @@ case $2 in
         set -- docker-compose version
         ;;
     --docker-workdir-info)
-        set -- stat ${PWD}
+        set -- stat "${PWD}"
         ;;
 esac
 

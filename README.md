@@ -53,7 +53,7 @@ For [NodeJS](https://www.npmjs.com/package/make.bat) developer
 C:\Users\SamSepiol> npm install -g make.bat
 ```
 
-### Usage
+## Usage
 
 As a standard GNU Make simply you run `make` command from your project directory  
 
