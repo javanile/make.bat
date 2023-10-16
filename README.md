@@ -41,13 +41,13 @@ scoop bucket add javanile https://github.com/javanile/scoop-bucket.git
 scoop install make.bat
 ```
 
-For Python developer
+For [Python](https://pypi.org/project/make.bat) developer
 
 ```cmd
 C:\Users\SamSepiol> pip install make.bat
 ```
 
-For NodeJS developer 
+For [NodeJS](https://www.npmjs.com/package/make.bat) developer 
 
 ```cmd
 C:\Users\SamSepiol> npm install -g make.bat
