@@ -31,7 +31,7 @@ requirements:
 
 release: requirements
 	@rm -rf build/ dist/ *egg* **.pyc __pycache__
-	@python3 setup.py bdist_wheel --universal
+	@python3 contrib/setup.py bdist_wheel --universal
 	@python3 -m twine upload dist/*
 
 fork:
