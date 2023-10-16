@@ -35,5 +35,4 @@ call docker run --rm -v "%CD%:/pwd" -v "%VOL1%" -v "%VOL2%" javanile/pwd > .pwd.
 set /p PWD=<.pwd.var
 del .pwd.var
 
-echo "make %*"
 call docker run -ti --rm -w "%PWD%" -v "%CD%:%PWD%" -v "%VOL1%" -v "%VOL2%" "%MAKE%" %*
