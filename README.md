@@ -8,7 +8,7 @@ GNU Make for Windows ignited by Docker
 
 Make.bat is a convenient Dockerized wrapper for GNU Make that enables you to seamlessly execute Makefiles on Windows without affecting the developer's user experience.
 
-### Features
+## Features
 
 * Provides a hassle-free way to run GNU Make on Windows.
 * Works transparently, preserving the native development environment.
@@ -16,11 +16,11 @@ Make.bat is a convenient Dockerized wrapper for GNU Make that enables you to sea
 * Isolates Makefile execution within a Docker container.
 * Easily customizable and extensible for specific project needs.
 
-### Requirements
+## Requirements
 
 * Docker for Windows - <https://docs.docker.com/docker-for-windows/install/> 
 
-### Installation
+## Installation
 
 For [PowerShell](https://en.wikipedia.org/wiki/PowerShell) user
 
@@ -61,7 +61,7 @@ As a standard GNU Make simply you run `make` command from your project directory
 C:\Users\SamSepiol\MrProject> make 
 ```
 
-### Manual setup
+## Manual setup
 
 Copy this file [make.bat](https://raw.githubusercontent.com/javanile/make.bat/master/make.bat) into the following directory `%USERPROFILE%\AppData\Local\Microsoft\WindowsApps`
 
@@ -77,12 +77,12 @@ make test
 
 This project is open-sourced software licensed under the MIT license.
 
-# Feedback and Contributions
+## Feedback and Contributions
 
 Feel free to report issues or contribute to this project on GitHub.
 
-# Support
+## Support
 
 For questions or assistance, please contact our support team at bianco@javanile.org.
 
-Enjoy using Make.bat for your Windows development workflow!
+*Enjoy using Make.bat for your Windows development workflow!*
