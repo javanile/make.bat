@@ -18,22 +18,16 @@ Make for Windows ignited by Docker
 
 ### Installation
 
-For [PowerShell]() user
+For [PowerShell](https://en.wikipedia.org/wiki/PowerShell) user
 
 ```shell
 PS C:\Users\SamSepiol> curl git.io/make.ps1 -o setup.ps1; .\setup.ps1
 ```
 
-For [cmd.exe]() user
+For [cmd.exe](https://en.wikipedia.org/wiki/Cmd.exe) user
 
 ```sh
 curl -fsSL https://deno.land/x/install/install.sh | sh
-```
-
-[Chocolatey](https://chocolatey.org/packages/deno) (Windows):
-
-```powershell
-choco install deno
 ```
 
 For [Scoop](https://scoop.sh/) user:
@@ -55,12 +49,6 @@ For NodeJS developer
 C:\Users\SamSepiol> npm install -g make.bat
 ```
 
-For PHP developer 
-
-```cmd
-C:\Users\SamSepiol> composer global require javanile/make.bat
-```
-
 ### Usage
 
 As a standard GNU Make simply you  
@@ -71,16 +59,16 @@ C:\Users\SamSepiol\MrProject> make
 
 ### Manual setup
 
-Copy this file [make.bat](https://raw.githubusercontent.com/javanile/make.bat/master/make.bat) into the following directory
-
-```
-%USERPROFILE%\AppData\Local\Microsoft\WindowsApps
-```
+Copy this file [make.bat](https://raw.githubusercontent.com/javanile/make.bat/master/make.bat) into the following directory `%USERPROFILE%\AppData\Local\Microsoft\WindowsApps`
 
 ## Development
 
+Clone repository the change files and run test with following command
+
 ```bash
-docker run
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    -v /usr/bin/docker:/usr/bin/docker
+make test
 ```
+
+## License
+
+This project is open-sourced software licensed under the MIT license.
