@@ -3,6 +3,7 @@
 build/
 dist/
 make.bat.egg-info/
+.editorconfig
 .pwd.var
 pwd.var
 #pwd.yml

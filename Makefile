@@ -1,6 +1,8 @@
 #!make
 
-.PHONY: build
+init:
+	@curl -so .editorconfig https://editorconfig.javanile.org/lib/windows
+
 build:
 	@chmod +x make-entrypoint
 	@docker build --tag javanile/make.bat .
