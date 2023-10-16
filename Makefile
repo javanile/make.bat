@@ -44,6 +44,9 @@ fork:
 test-build:
 	@bash contrib/docker-make.sh build
 
+test-pwd: build
+	@bash -c "pwd"
+
 test-bash: build
 	@bash contrib/docker-make.sh unit-bash
 

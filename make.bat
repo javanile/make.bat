@@ -26,13 +26,13 @@
 :: SOFTWARE.
 ::
 
-set MAKE=javanile/make.bat:20
-set VOL1=//var/run/docker.sock:/var/run/docker.sock
-set VOL2=//usr/bin/docker:/usr/bin/docker
+set MAKEBAT=javanile/make.bat:20
+set VOLUME1=//var/run/docker.sock:/var/run/docker.sock
+set VOLUME2=//usr/bin/docker:/usr/bin/docker
 
-call docker run --rm -v "%CD%:/pwd" -v "%VOL1%" -v "%VOL2%" javanile/pwd > .pwd.var
+call docker run --rm -v "%CD%:/pwd" -v "%VOLUME1%" -v "%VOLUME2%" javanile/pwd > .pwd.var
 
-set /p PWD=<.pwd.var
-del .pwd.var
+set /P PWD=<.pwd.var
+del /F .pwd.var
 
-call docker run -ti --rm -w "%PWD%" -v "%CD%:%PWD%" -v "%VOL1%" -v "%VOL2%" "%MAKE%" %*
+call docker run -ti --rm -w "%PWD%" -v "%CD%:%PWD%" -v "%VOLUME1%" -v "%VOLUME2%" "%MAKEBAT%" %*
