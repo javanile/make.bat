@@ -33,7 +33,8 @@ RUN apk add --no-cache coreutils
 
 RUN apk add
 
-ENV OS=Windows_NT
+ENV OS="Windows_NT"
+ENV WINDOWS_VOLUME=""
 
 ENTRYPOINT ["make-entrypoint"]
 
