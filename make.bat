@@ -34,7 +34,4 @@ set "PWD=%PWD:"=%"
 
 for %%I in ("%PWD%.") do set "WORKDIR=/%%~nxI"
 
-rem echo %PWD%
-rem echo %WORKDIR%
-
-call docker run -ti --rm -w "%PWD%" -v "%PWD%:%WORKDIR%" -v "%VOLUME1%" -v "%VOLUME2%" "%MAKEBAT%" %*
+call docker run -ti --rm -w "%WORKDIR%" -v "%PWD%:%WORKDIR%" -v "%VOLUME1%" -v "%VOLUME2%" "%MAKEBAT%" %*
